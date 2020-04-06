@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29926.136
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlbanianXrm Plugin Base", "AlbanianXrm Plugin Base\AlbanianXrm Plugin Base.csproj", "{A7398E32-291F-414C-B277-A8DD87D4760D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlbanianXrm Workflow Base", "AlbanianXrm Workflow Base\AlbanianXrm Workflow Base.csproj", "{ED8FCC2A-D837-457C-A39F-F4C400A8D51A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A7398E32-291F-414C-B277-A8DD87D4760D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7398E32-291F-414C-B277-A8DD87D4760D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7398E32-291F-414C-B277-A8DD87D4760D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7398E32-291F-414C-B277-A8DD87D4760D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED8FCC2A-D837-457C-A39F-F4C400A8D51A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED8FCC2A-D837-457C-A39F-F4C400A8D51A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED8FCC2A-D837-457C-A39F-F4C400A8D51A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED8FCC2A-D837-457C-A39F-F4C400A8D51A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8F462890-C236-4332-96A8-D8322467CAC1}
+	EndGlobalSection
+EndGlobal
