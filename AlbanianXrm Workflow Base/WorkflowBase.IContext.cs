@@ -6,7 +6,7 @@ namespace AlbanianXrm
 {
     public partial class WorkflowBase
     {
-        protected interface IContext
+        public interface IContext
         {
             ITracingService TracingService { get; }
             IWorkflowContext WorkflowContext { get; }

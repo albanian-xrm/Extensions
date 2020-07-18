@@ -8,7 +8,7 @@ namespace AlbanianXrm
 {
     public partial class WorkflowBase
     {
-        private class Context : IContext
+        public class Context : IContext
         {
             private readonly CodeActivityContext codeActivityContext;
             private ITracingService tracingService;

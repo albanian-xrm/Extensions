@@ -4,34 +4,41 @@ using System.ServiceModel;
 
 namespace AlbanianXrm
 {
-    public abstract partial class PluginBase : IPlugin
-    {
-        private readonly string pluginName;
+	public abstract partial class PluginBase : IPlugin
+	{
+		public const string Target = "Target";
+		public const string DefaultImage = "Image";
+		public const int IsvCodeAbortedOperation = -2147220891;
 
-        public PluginBase()
-        {
-            pluginName = GetType().Name;
-        }
+		private readonly string pluginName;
 
-        public void Execute(IServiceProvider serviceProvider)
-        {
-            var context = new Context(serviceProvider);
-            try
-            {
-                Execute(context);
-            }
-            catch (FaultException<OrganizationServiceFault> ex)
-            {
-                throw new InvalidPluginExecutionException($"An error occurred in the {pluginName} plug-in.", ex);
-            }
+		public PluginBase()
+		{
+			pluginName = GetType().FullName;
+		}
 
-            catch (Exception ex)
-            {
-                context.TracingService.Trace("{0}: {1}", pluginName, ex.ToString());
-                throw;
-            }
-        }
+		public void Execute(IServiceProvider serviceProvider)
+		{
+			var context = new Context(serviceProvider);
+			try
+			{
+				Execute(context);
+			}
+			catch (FaultException<OrganizationServiceFault> ex)
+			{
+				throw new InvalidPluginExecutionException(
+					ex.Detail.ErrorCode == IsvCodeAbortedOperation ?
+						ex.Message :
+						$"An error occurred in the {pluginName} plug-in.",
+					ex);
+			}
+			catch (Exception ex)
+			{
+				context.TracingService.Trace("{0}: {1}", pluginName, ex.ToString());
+				throw;
+			}
+		}
 
-        protected abstract void Execute(IContext context);
-    }
+		protected abstract void Execute(IContext context);
+	}
 }

@@ -4,7 +4,7 @@ namespace AlbanianXrm
 {
 	public partial class WorkflowBase
 	{
-		protected interface IArguments
+		public interface IArguments
 		{
 			T GetValue<T>(InArgument<T> @in);
 			T GetValue<T>(InOutArgument<T> @in);
