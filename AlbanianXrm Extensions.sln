@@ -7,7 +7,19 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlbanianXrm Plugin Base", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlbanianXrm Workflow Base", "AlbanianXrm Workflow Base\AlbanianXrm Workflow Base.csproj", "{ED8FCC2A-D837-457C-A39F-F4C400A8D51A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dynamics Plugin Template", "Dynamics Plugin Template\Dynamics Plugin Template.csproj", "{1CB2F47A-4F05-4109-9F3D-F334CE6BCCA4}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Shared Tools", "Shared Tools\Shared Tools.shproj", "{068ECFF9-DD77-4858-ABE7-6D757A660A6D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlbanianXrm Extensions", "AlbanianXrm Extensions\AlbanianXrm Extensions.csproj", "{D1D5BEB5-40B0-4A66-B4FB-A20C0FC70053}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dynamics Plugin Template Wizard", "Dynamics Plugin Template Wizard\Dynamics Plugin Template Wizard.csproj", "{73EBE1A6-F4B7-45CB-8168-8803C641AFAC}"
+EndProject
 Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		Shared Tools\Shared Tools.projitems*{068ecff9-dd77-4858-abe7-6d757a660a6d}*SharedItemsImports = 13
+		Shared Tools\Shared Tools.projitems*{73ebe1a6-f4b7-45cb-8168-8803c641afac}*SharedItemsImports = 4
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
@@ -21,6 +33,18 @@ Global
 		{ED8FCC2A-D837-457C-A39F-F4C400A8D51A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ED8FCC2A-D837-457C-A39F-F4C400A8D51A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ED8FCC2A-D837-457C-A39F-F4C400A8D51A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1CB2F47A-4F05-4109-9F3D-F334CE6BCCA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1CB2F47A-4F05-4109-9F3D-F334CE6BCCA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1CB2F47A-4F05-4109-9F3D-F334CE6BCCA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1CB2F47A-4F05-4109-9F3D-F334CE6BCCA4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1D5BEB5-40B0-4A66-B4FB-A20C0FC70053}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1D5BEB5-40B0-4A66-B4FB-A20C0FC70053}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1D5BEB5-40B0-4A66-B4FB-A20C0FC70053}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1D5BEB5-40B0-4A66-B4FB-A20C0FC70053}.Release|Any CPU.Build.0 = Release|Any CPU
+		{73EBE1A6-F4B7-45CB-8168-8803C641AFAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73EBE1A6-F4B7-45CB-8168-8803C641AFAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73EBE1A6-F4B7-45CB-8168-8803C641AFAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73EBE1A6-F4B7-45CB-8168-8803C641AFAC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
