@@ -68,14 +68,23 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="WorkflowBase.Context.cs" />
+    <Compile Include="WorkflowBase.Context.cs">
+      <DependentUpon>WorkflowBase.cs</DependentUpon>
+    </Compile>
     <Compile Include="WorkflowBase.cs" />
-    <Compile Include="WorkflowBase.IContext.cs" />
-    <Compile Include="WorkflowBase.Arguments.cs" />
+    <Compile Include="WorkflowBase.IContext.cs">
+      <DependentUpon>WorkflowBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WorkflowBase.Arguments.cs">
+      <DependentUpon>WorkflowBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WorkflowBase.IArguments.cs">
+      <DependentUpon>WorkflowBase.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-    <Compile Include="WorkflowBase.IArguments.cs" />
+
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

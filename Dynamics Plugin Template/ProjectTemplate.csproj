@@ -65,9 +65,13 @@
 
   </ItemGroup>
 	<ItemGroup>
-		<Compile Include="PluginBase.cs" />
-		<Compile Include="PluginBase.Context.cs" />
-		<Compile Include="PluginBase.IContext.cs" />
+    <Compile Include="PluginBase.cs" />
+    <Compile Include="PluginBase.IContext.cs">
+      <DependentUpon>PluginBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PluginBase.Context.cs">
+      <DependentUpon>PluginBase.cs</DependentUpon>
+    </Compile>
 		<Compile Include="Properties\AssemblyInfo.cs" />
 	</ItemGroup>
 	<Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
