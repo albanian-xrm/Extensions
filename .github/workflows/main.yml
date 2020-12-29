@@ -33,7 +33,7 @@ jobs:
         uses: microsoft/setup-msbuild@v1
       
       - name: Setup Nuget.exe
-        uses: nuget/setup-nuget@v1.0.2
+        uses: nuget/setup-nuget@v1
       
       - name: Restore Packages
         run: nuget.exe restore "$Env:GITHUB_WORKSPACE\AlbanianXrm Extensions.sln"
