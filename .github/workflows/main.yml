@@ -42,6 +42,7 @@ jobs:
           nuget.exe install ILMerge.MSBuild.Task -Version 1.0.7 -OutputDirectory "$Env:GITHUB_WORKSPACE\Packages"
           nuget.exe install Microsoft.CrmSdk.CoreAssemblies -Version 9.0.2.26 -OutputDirectory "$Env:GITHUB_WORKSPACE\Packages"
           nuget.exe install Microsoft.CrmSdk.CoreAssemblies -Version 9.0.2.5 -OutputDirectory "$Env:GITHUB_WORKSPACE\Packages"
+          New-Item -Type dir "$Env:GITHUB_WORKSPACE\AlbanianXrm Extensions\Packages"
           Copy-Item "$Env:GITHUB_WORKSPACE\Packages\ILMerge.3.0.41\ILMerge.3.0.41.nupkg" -Destination "$Env:GITHUB_WORKSPACE\AlbanianXrm Extensions\Packages\ILMerge.3.0.41.nupkg"
           Copy-Item "$Env:GITHUB_WORKSPACE\Packages\ILMerge.MSBuild.Task.1.0.7\ILMerge.MSBuild.Task.1.0.7.nupkg" -Destination "$Env:GITHUB_WORKSPACE\AlbanianXrm Extensions\Packages\ILMerge.MSBuild.Task.1.0.7.nupkg"
           Copy-Item "$Env:GITHUB_WORKSPACE\Packages\Microsoft.CrmSdk.CoreAssemblies.9.0.2.26\Microsoft.CrmSdk.CoreAssemblies.9.0.2.26.nupkg" -Destination "$Env:GITHUB_WORKSPACE\AlbanianXrm Extensions\Packages\Microsoft.CrmSdk.CoreAssemblies.9.0.2.26.nupkg"
