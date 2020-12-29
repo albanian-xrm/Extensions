@@ -36,7 +36,12 @@ jobs:
         uses: nuget/setup-nuget@v1
       
       - name: Restore Packages
-        run: nuget.exe restore "$Env:GITHUB_WORKSPACE\AlbanianXrm Extensions.sln"
+        run: | 
+          nuget.exe restore "$Env:GITHUB_WORKSPACE\AlbanianXrm Extensions.sln"
+          nuget.exe install ILMerge -Version 3.0.41 -OutputDirectory "$Env:GITHUB_WORKSPACE\AlbanianXrm Extensions\Packages"
+          nuget.exe install ILMerge.MSBuild.Task -Version 1.0.7 -OutputDirectory "$Env:GITHUB_WORKSPACE\AlbanianXrm Extensions\Packages"
+          nuget.exe install Microsoft.CrmSdk.CoreAssemblies -Version 9.0.2.26 -OutputDirectory "$Env:GITHUB_WORKSPACE\AlbanianXrm Extensions\Packages"
+          nuget.exe install Microsoft.CrmSdk.CoreAssemblies -Version 9.0.2.5 -OutputDirectory "$Env:GITHUB_WORKSPACE\AlbanianXrm Extensions\Packages"
       
       - name: Build Solution
         run: MsBuild.exe "$Env:GITHUB_WORKSPACE\AlbanianXrm Extensions.sln"
