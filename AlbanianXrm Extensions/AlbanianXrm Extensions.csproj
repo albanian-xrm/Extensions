@@ -44,12 +44,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="ILMerge" Version="3.0.41" GeneratePathProperty="true" />
+    <PackageReference Include="ILMerge" Version="3.0.41" GeneratePathProperty="true">
+      <ExcludeAssets>All</ExcludeAssets>
+      <PrivateAssets>All</PrivateAssets>
+    </PackageReference>
     <PackageReference Include="Microsoft.CrmSdk.CoreAssemblies" Version="9.0.2.29" GeneratePathProperty="true">
       <ExcludeAssets>All</ExcludeAssets>
       <PrivateAssets>All</PrivateAssets>
     </PackageReference>
-    <PackageReference Include="ILMerge.MSBuild.Task" Version="1.0.7" GeneratePathProperty="true" />
+    <PackageReference Include="ILMerge.MSBuild.Task" Version="1.0.7" GeneratePathProperty="true">
+      <ExcludeAssets>All</ExcludeAssets>
+      <PrivateAssets>All</PrivateAssets>
+    </PackageReference>
 
     <PackageReference Include="Microsoft.VisualStudio.SDK" Version="16.0.205" ExcludeAssets="runtime" />
     <PackageReference Include="Microsoft.VSSDK.BuildTools" Version="16.6.2058" />
