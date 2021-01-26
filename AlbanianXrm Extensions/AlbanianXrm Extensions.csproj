@@ -95,16 +95,16 @@
   <Import Project="$(VSToolsPath)\VSSDK\Microsoft.VsSDK.targets" Condition="'$(VSToolsPath)' != ''" />
   <PropertyGroup>
     <PreBuildEvent>
-      IF NOT EXISTS '$(ProjectDir)Packages\ILMerge.3.0.41.nupkg' (
-      XCOPY "$(PkgILMerge)\ILMerge.3.0.41.nupkg" "$(ProjectDir)Packages\" /y /i
+      IF NOT EXIST "$(SolutionDir)AlbanianXrm Extensions\Packages\ILMerge.3.0.41.nupkg" (
+      XCOPY "$(PkgILMerge)\ILMerge.3.0.41.nupkg" "$(SolutionDir)AlbanianXrm Extensions\Packages\" /y /i
       )
 
-      IF NOT EXISTS '$(ProjectDir)Packages\ILMerge.MSBuild.Task.1.0.7.nupkg' (
-      XCOPY "$(PkgILMerge_MSBuild_Task)\ILMerge.MSBuild.Task.1.0.7.nupkg" "$(ProjectDir)Packages\" /y /i
+      IF NOT EXIST "$(SolutionDir)AlbanianXrm Extensions\Packages\ILMerge.MSBuild.Task.1.0.7.nupkg" (
+      XCOPY "$(PkgILMerge_MSBuild_Task)\ILMerge.MSBuild.Task.1.0.7.nupkg" "$(SolutionDir)AlbanianXrm Extensions\Packages\" /y /i
       )
 
-      IF NOT EXISTS 'Packages\Microsoft.CrmSdk.CoreAssemblies.9.0.2.29.nupkg' (
-      XCOPY "$(PkgMicrosoft_CrmSdk_CoreAssemblies)\Microsoft.CrmSdk.CoreAssemblies.9.0.2.29.nupkg" "$(ProjectDir)Packages\" /y /i
+      IF NOT EXIST "$(SolutionDir)AlbanianXrm Extensions\Packages\Microsoft.CrmSdk.CoreAssemblies.9.0.2.29.nupkg" (
+      XCOPY "$(PkgMicrosoft_CrmSdk_CoreAssemblies)\Microsoft.CrmSdk.CoreAssemblies.9.0.2.29.nupkg" "$(SolutionDir)AlbanianXrm Extensions\Packages\" /y /i
       )
     </PreBuildEvent>
   </PropertyGroup>
