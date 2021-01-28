@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlbanianXrm Extensions", "A
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dynamics Plugin Template Wizard", "Dynamics Plugin Template Wizard\Dynamics Plugin Template Wizard.csproj", "{73EBE1A6-F4B7-45CB-8168-8803C641AFAC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlbanianXrm Extensions.NuGetDependencies1", "AlbanianXrm Extensions.NuGetDependencies1\AlbanianXrm Extensions.NuGetDependencies1.csproj", "{F13408B1-A211-4E70-AFFD-BF30BB167097}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		Shared Tools\Shared Tools.projitems*{068ecff9-dd77-4858-abe7-6d757a660a6d}*SharedItemsImports = 13
@@ -45,6 +47,10 @@ Global
 		{73EBE1A6-F4B7-45CB-8168-8803C641AFAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{73EBE1A6-F4B7-45CB-8168-8803C641AFAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{73EBE1A6-F4B7-45CB-8168-8803C641AFAC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F13408B1-A211-4E70-AFFD-BF30BB167097}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F13408B1-A211-4E70-AFFD-BF30BB167097}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F13408B1-A211-4E70-AFFD-BF30BB167097}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F13408B1-A211-4E70-AFFD-BF30BB167097}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

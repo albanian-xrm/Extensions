@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project Sdk="Microsoft.NET.Sdk">
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
   </PropertyGroup>
-  <!--<Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />-->
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -15,16 +15,16 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>AlbanianXrm_Extensions</RootNamespace>
     <AssemblyName>AlbanianXrm Extensions</AssemblyName>
-    <TargetFramework>net472</TargetFramework>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <GeneratePkgDefFile>false</GeneratePkgDefFile>
     <IncludeAssemblyInVSIXContainer>false</IncludeAssemblyInVSIXContainer>
     <IncludeDebugSymbolsInVSIXContainer>false</IncludeDebugSymbolsInVSIXContainer>
     <IncludeDebugSymbolsInLocalVSIXDeployment>false</IncludeDebugSymbolsInLocalVSIXDeployment>
     <CopyBuildOutputToOutputDirectory>false</CopyBuildOutputToOutputDirectory>
     <CopyOutputSymbolsToOutputDirectory>false</CopyOutputSymbolsToOutputDirectory>
-    <!--<StartAction>Program</StartAction>
+    <StartAction>Program</StartAction>
     <StartProgram Condition="'$(DevEnvDir)' != ''">$(DevEnvDir)devenv.exe</StartProgram>
-    <StartArguments>/rootsuffix Exp</StartArguments>-->
+    <StartArguments>/rootsuffix Exp</StartArguments>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -44,23 +44,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="ILMerge" Version="3.0.41" GeneratePathProperty="true">
-      <ExcludeAssets>All</ExcludeAssets>
-      <PrivateAssets>All</PrivateAssets>
-    </PackageReference>
-    <PackageReference Include="Microsoft.CrmSdk.CoreAssemblies" Version="9.0.2.29" GeneratePathProperty="true">
-      <ExcludeAssets>All</ExcludeAssets>
-      <PrivateAssets>All</PrivateAssets>
-    </PackageReference>
-    <PackageReference Include="ILMerge.MSBuild.Task" Version="1.0.7" GeneratePathProperty="true">
-      <ExcludeAssets>All</ExcludeAssets>
-      <PrivateAssets>All</PrivateAssets>
-    </PackageReference>
-
-    <PackageReference Include="Microsoft.VisualStudio.SDK" Version="16.0.205" ExcludeAssets="runtime" />
-    <PackageReference Include="Microsoft.VSSDK.BuildTools" Version="16.6.2058" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Packages\ILMerge.3.0.41.nupkg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
@@ -73,6 +56,8 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
+    <None Include="packages.config" />
+    <None Include="Packages\Microsoft.CrmSdk.CoreAssemblies.9.0.2.5.nupkg" />
     <None Include="source.extension.vsixmanifest">
       <SubType>Designer</SubType>
     </None>
@@ -81,13 +66,19 @@
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
   </ItemGroup>
-
   <ItemGroup>
+    <ProjectReference Include="..\AlbanianXrm Extensions.NuGetDependencies1\AlbanianXrm Extensions.NuGetDependencies1.csproj">
+      <Project>{f13408b1-a211-4e70-affd-bf30bb167097}</Project>
+      <Name>AlbanianXrm Extensions.NuGetDependencies1</Name>
+      <ExcludeAssets>All</ExcludeAssets>
+      <PrivateAssets>All</PrivateAssets>
+    </ProjectReference>
     <ProjectReference Include="..\Dynamics Plugin Template Wizard\Dynamics Plugin Template Wizard.csproj">
       <Project>{73EBE1A6-F4B7-45CB-8168-8803C641AFAC}</Project>
       <Name>Dynamics Plugin Template Wizard</Name>
       <IncludeOutputGroupsInVSIX>BuiltProjectOutputGroup%3bBuiltProjectOutputGroupDependencies%3bGetCopyToOutputDirectoryItems%3bSatelliteDllsProjectOutputGroup%3b</IncludeOutputGroupsInVSIX>
       <IncludeOutputGroupsInVSIXLocalOnly>DebugSymbolsProjectOutputGroup%3b</IncludeOutputGroupsInVSIXLocalOnly>
+      <Ngen>false</Ngen>
     </ProjectReference>
     <ProjectReference Include="..\Dynamics Plugin Template\Dynamics Plugin Template.csproj">
       <Project>{1CB2F47A-4F05-4109-9F3D-F334CE6BCCA4}</Project>
@@ -95,23 +86,26 @@
       <VSIXSubPath>ProjectTemplates</VSIXSubPath>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <IncludeOutputGroupsInVSIX>TemplateProjectOutputGroup%3b</IncludeOutputGroupsInVSIX>
+      <Ngen>false</Ngen>
     </ProjectReference>
   </ItemGroup>
-  <!--<Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />-->
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(VSToolsPath)\VSSDK\Microsoft.VsSDK.targets" Condition="'$(VSToolsPath)' != ''" />
   <PropertyGroup>
-    <PreBuildEvent>
-      IF NOT EXIST "$(SolutionDir)AlbanianXrm Extensions\Packages\ILMerge.3.0.41.nupkg" (
-      XCOPY "$(PkgILMerge)\ILMerge.3.0.41.nupkg" "$(SolutionDir)AlbanianXrm Extensions\Packages\" /y /i
+    <PreBuildEvent>IF NOT EXIST "$(SolutionDir)AlbanianXrm Extensions\Packages\ILMerge.3.0.41.nupkg" (
+      XCOPY "$(SolutionDir)packages\ILMerge.3.0.41\ILMerge.3.0.41.nupkg" "$(SolutionDir)AlbanianXrm Extensions\Packages\" /y /i
       )
 
-      IF NOT EXIST "$(SolutionDir)AlbanianXrm Extensions\Packages\ILMerge.MSBuild.Task.1.0.7.nupkg" (
-      XCOPY "$(PkgILMerge_MSBuild_Task)\ILMerge.MSBuild.Task.1.0.7.nupkg" "$(SolutionDir)AlbanianXrm Extensions\Packages\" /y /i
+IF NOT EXIST "$(SolutionDir)AlbanianXrm Extensions\Packages\ILMerge.MSBuild.Task.1.0.7.nupkg" (
+      XCOPY "$(SolutionDir)packages\ILMerge.MSBuild.Task.1.0.7\ILMerge.MSBuild.Task.1.0.7.nupkg" "$(SolutionDir)AlbanianXrm Extensions\Packages\" /y /i
       )
 
-      IF NOT EXIST "$(SolutionDir)AlbanianXrm Extensions\Packages\Microsoft.CrmSdk.CoreAssemblies.9.0.2.29.nupkg" (
-      XCOPY "$(PkgMicrosoft_CrmSdk_CoreAssemblies)\Microsoft.CrmSdk.CoreAssemblies.9.0.2.29.nupkg" "$(SolutionDir)AlbanianXrm Extensions\Packages\" /y /i
+IF NOT EXIST "$(SolutionDir)AlbanianXrm Extensions\Packages\Microsoft.CrmSdk.CoreAssemblies.9.0.2.29.nupkg" (
+      XCOPY "$(SolutionDir)packages\Microsoft.CrmSdk.CoreAssemblies.9.0.2.29\Microsoft.CrmSdk.CoreAssemblies.9.0.2.29.nupkg" "$(SolutionDir)AlbanianXrm Extensions\Packages\" /y /i
       )
-    </PreBuildEvent>
+
+IF NOT EXIST "$(SolutionDir)AlbanianXrm Extensions\Packages\Microsoft.CrmSdk.CoreAssemblies.9.0.2.5.nupkg" (
+      XCOPY "$(SolutionDir)packages\Microsoft.CrmSdk.CoreAssemblies.9.0.2.5\Microsoft.CrmSdk.CoreAssemblies.9.0.2.5.nupkg" "$(SolutionDir)AlbanianXrm Extensions\Packages\" /y /i
+      )</PreBuildEvent>
   </PropertyGroup>
 </Project>
