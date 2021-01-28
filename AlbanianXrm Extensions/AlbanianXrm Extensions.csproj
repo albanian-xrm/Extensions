@@ -48,20 +48,31 @@
   </PropertyGroup>
   <ItemGroup>
     <Content Include="Packages\ILMerge.3.0.41.nupkg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Packages\Microsoft.CrmSdk.CoreAssemblies.9.0.2.29.nupkg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Packages\ILMerge.MSBuild.Task.1.0.7.nupkg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <None Include="app.config" />
     <None Include="packages.config" />
-    <None Include="Packages\Microsoft.CrmSdk.CoreAssemblies.9.0.2.5.nupkg" />
+    <Content Include="Packages\Microsoft.CrmSdk.CoreAssemblies.9.0.2.5.nupkg">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Packages\Microsoft.CrmSdk.Workflow.9.0.2.29.nupkg">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Packages\Microsoft.CrmSdk.Workflow.9.0.2.5.nupkg">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="source.extension.vsixmanifest">
       <SubType>Designer</SubType>
     </None>
@@ -91,6 +102,19 @@
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <IncludeOutputGroupsInVSIX>TemplateProjectOutputGroup%3b</IncludeOutputGroupsInVSIX>
       <Ngen>false</Ngen>
+    </ProjectReference>
+    <ProjectReference Include="..\Dynamics Workflow Template Wizard\Dynamics Workflow Template Wizard.csproj">
+      <Project>{1382B484-BBF0-43B2-828C-6B8CFDE58789}</Project>
+      <Name>Dynamics Workflow Template Wizard</Name>
+      <IncludeOutputGroupsInVSIX>BuiltProjectOutputGroup%3bBuiltProjectOutputGroupDependencies%3bGetCopyToOutputDirectoryItems%3bSatelliteDllsProjectOutputGroup%3b</IncludeOutputGroupsInVSIX>
+      <IncludeOutputGroupsInVSIXLocalOnly>DebugSymbolsProjectOutputGroup%3b</IncludeOutputGroupsInVSIXLocalOnly>
+    </ProjectReference>
+    <ProjectReference Include="..\Dynamics Workflow Template\Dynamics Workflow Template.csproj">
+      <Project>{A4D10DF8-371B-4357-8316-4AFD3A27A70A}</Project>
+      <Name>Dynamics Workflow Template</Name>
+      <VSIXSubPath>ProjectTemplates</VSIXSubPath>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <IncludeOutputGroupsInVSIX>TemplateProjectOutputGroup%3b</IncludeOutputGroupsInVSIX>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
@@ -345,24 +369,42 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
   </ItemGroup>
+  <ItemGroup>
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System.Activities" />
+    <Reference Include="System.Activities.Presentation" />
+    <Reference Include="System.Workflow.Activities" />
+    <Reference Include="System.Workflow.ComponentModel" />
+    <Reference Include="System.Workflow.Runtime" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(VSToolsPath)\VSSDK\Microsoft.VsSDK.targets" Condition="'$(VSToolsPath)' != ''" />
   <PropertyGroup>
-    <PreBuildEvent>IF NOT EXIST "$(SolutionDir)AlbanianXrm Extensions\Packages\ILMerge.3.0.41.nupkg" (
+    <PreBuildEvent>
+      IF NOT EXIST "$(SolutionDir)AlbanianXrm Extensions\Packages\ILMerge.3.0.41.nupkg" (
       XCOPY "$(SolutionDir)packages\ILMerge.3.0.41\ILMerge.3.0.41.nupkg" "$(SolutionDir)AlbanianXrm Extensions\Packages\" /y /i
       )
 
-IF NOT EXIST "$(SolutionDir)AlbanianXrm Extensions\Packages\ILMerge.MSBuild.Task.1.0.7.nupkg" (
+      IF NOT EXIST "$(SolutionDir)AlbanianXrm Extensions\Packages\ILMerge.MSBuild.Task.1.0.7.nupkg" (
       XCOPY "$(SolutionDir)packages\ILMerge.MSBuild.Task.1.0.7\ILMerge.MSBuild.Task.1.0.7.nupkg" "$(SolutionDir)AlbanianXrm Extensions\Packages\" /y /i
       )
 
-IF NOT EXIST "$(SolutionDir)AlbanianXrm Extensions\Packages\Microsoft.CrmSdk.CoreAssemblies.9.0.2.29.nupkg" (
+      IF NOT EXIST "$(SolutionDir)AlbanianXrm Extensions\Packages\Microsoft.CrmSdk.CoreAssemblies.9.0.2.29.nupkg" (
       XCOPY "$(SolutionDir)packages\Microsoft.CrmSdk.CoreAssemblies.9.0.2.29\Microsoft.CrmSdk.CoreAssemblies.9.0.2.29.nupkg" "$(SolutionDir)AlbanianXrm Extensions\Packages\" /y /i
       )
 
-IF NOT EXIST "$(SolutionDir)AlbanianXrm Extensions\Packages\Microsoft.CrmSdk.CoreAssemblies.9.0.2.5.nupkg" (
+      IF NOT EXIST "$(SolutionDir)AlbanianXrm Extensions\Packages\Microsoft.CrmSdk.CoreAssemblies.9.0.2.5.nupkg" (
       XCOPY "$(SolutionDir)packages\Microsoft.CrmSdk.CoreAssemblies.9.0.2.5\Microsoft.CrmSdk.CoreAssemblies.9.0.2.5.nupkg" "$(SolutionDir)AlbanianXrm Extensions\Packages\" /y /i
-      )</PreBuildEvent>
+      )
+
+      IF NOT EXIST "$(SolutionDir)AlbanianXrm Extensions\Packages\Microsoft.CrmSdk.Workflow.9.0.2.29.nupkg" (
+      XCOPY "$(SolutionDir)packages\Microsoft.CrmSdk.Workflow.9.0.2.29\Microsoft.CrmSdk.Workflow.9.0.2.29.nupkg" "$(SolutionDir)AlbanianXrm Extensions\Packages\" /y /i
+      )
+
+      IF NOT EXIST "$(SolutionDir)AlbanianXrm Extensions\Packages\Microsoft.CrmSdk.Workflow.9.0.2.5.nupkg" (
+      XCOPY "$(SolutionDir)packages\Microsoft.CrmSdk.Workflow.9.0.2.5\Microsoft.CrmSdk.Workflow.9.0.2.5.nupkg" "$(SolutionDir)AlbanianXrm Extensions\Packages\" /y /i
+      )
+    </PreBuildEvent>
   </PropertyGroup>
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

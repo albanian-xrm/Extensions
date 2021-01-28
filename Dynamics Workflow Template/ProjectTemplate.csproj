@@ -31,29 +31,34 @@
 		<WarningLevel>4</WarningLevel>
 	</PropertyGroup>
 	<ItemGroup>
-    <Reference Include="System"/>
-    $if$ ($targetframeworkversion$ >= 3.5)
-    <Reference Include="System.Core"/>
-    <Reference Include="System.ServiceModel"/>
-    <Reference Include="System.Xml.Linq"/>
-    <Reference Include="System.Data.DataSetExtensions"/>
-    $endif$
-    $if$ ($targetframeworkversion$ >= 4.0)
-    <Reference Include="Microsoft.CSharp"/>
-    $endif$
-    <Reference Include="System.Data"/>
-    <Reference Include="System.Xml"/>
-  </ItemGroup>
-	<ItemGroup>
-    <Compile Include="PluginBase.cs" />
-    <Compile Include="PluginBase.IContext.cs">
-      <DependentUpon>PluginBase.cs</DependentUpon>
-    </Compile>
-    <Compile Include="PluginBase.Context.cs">
-      <DependentUpon>PluginBase.cs</DependentUpon>
-    </Compile>
-		<Compile Include="Properties\AssemblyInfo.cs" />
+		<Reference Include="System"/>
+		$if$ ($targetframeworkversion$ >= 3.5)
+		<Reference Include="System.Core"/>
+		<Reference Include="System.Xml.Linq"/>
+		<Reference Include="System.Data.DataSetExtensions"/>
+		$endif$
+		$if$ ($targetframeworkversion$ >= 4.0)
+		<Reference Include="Microsoft.CSharp"/>
+ 		$endif$
+		<Reference Include="System.Data"/>
+		<Reference Include="System.Xml"/>
 	</ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WorkflowBase.Context.cs">
+      <DependentUpon>WorkflowBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WorkflowBase.cs" />
+    <Compile Include="WorkflowBase.IContext.cs">
+      <DependentUpon>WorkflowBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WorkflowBase.Arguments.cs">
+      <DependentUpon>WorkflowBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WorkflowBase.IArguments.cs">
+      <DependentUpon>WorkflowBase.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
 	<Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

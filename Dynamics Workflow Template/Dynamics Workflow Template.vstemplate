@@ -1,31 +1,33 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <VSTemplate Version="3.0.0" Type="Project" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" xmlns:sdk="http://schemas.microsoft.com/developer/vstemplate-sdkextension/2010">
   <TemplateData>
-    <Name>Dynamics Plugin Template</Name>
-    <Description>Dynamics Plugin Template by AlbanianXrm</Description>
+    <Name>Dynamics Workflow Template</Name>
+    <Description>Dynamics Workflow Template by AlbanianXrm</Description>
     <Icon>AlbanianXrm.ico</Icon>
     <ProjectType>CSharp</ProjectType>
     <RequiredFrameworkVersion>4.5.2</RequiredFrameworkVersion>
     <SortOrder>1000</SortOrder>
-    <TemplateID>b2f64c9e-1dd7-4717-be96-2b2041cfd39c</TemplateID>
+    <TemplateID>c73cc25a-262c-471c-ba88-40481163c610</TemplateID>
     <CreateNewFolder>true</CreateNewFolder>
-    <DefaultName>AlbanianXrm.Plugins</DefaultName>
+    <DefaultName>AlbanianXrm.Workflows</DefaultName>
     <ProvideDefaultName>true</ProvideDefaultName>
     <LanguageTag>C#</LanguageTag>
     <PlatformTag>Dynamics</PlatformTag>
-    <ProjectTypeTag>Plugin</ProjectTypeTag>
+    <ProjectTypeTag>Workflow</ProjectTypeTag>
     <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
   </TemplateData>
   <TemplateContent>
     <Project File="ProjectTemplate.csproj" ReplaceParameters="true">
       <ProjectItem ReplaceParameters="true" TargetFileName="Properties\AssemblyInfo.cs">Properties__AssemblyInfo.cs</ProjectItem>
-      <ProjectItem ReplaceParameters="true">PluginBase.Context.cs</ProjectItem>
-      <ProjectItem ReplaceParameters="true">PluginBase.cs</ProjectItem>
-      <ProjectItem ReplaceParameters="true">PluginBase.IContext.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true">WorkflowBase.Arguments.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true">WorkflowBase.Context.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true">WorkflowBase.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true">WorkflowBase.IArguments.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true">WorkflowBase.IContext.cs</ProjectItem>
     </Project>
   </TemplateContent>
   <WizardExtension>
-    <Assembly>Dynamics Plugin Template Wizard, Version=1.0.0.0, Culture=neutral, PublicKeyToken=39ed9050496bf140</Assembly>
-    <FullClassName>Dynamics_Plugin_Template.WizardImplementation</FullClassName>
+    <Assembly>Dynamics Workflow Template Wizard, Version=1.0.0.0, Culture=neutral, PublicKeyToken=39ed9050496bf140</Assembly>
+    <FullClassName>Dynamics_Workflow_Template.WizardImplementation</FullClassName>
   </WizardExtension>
 </VSTemplate>

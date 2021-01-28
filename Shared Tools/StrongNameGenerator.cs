@@ -15,11 +15,10 @@ namespace Shared_Tools
         [DllImport("mscoree.dll", CharSet = CharSet.Unicode)]
         internal static extern int StrongNameErrorInfo();
 
-        public static void GenerateKey(Project project)
+        public static void GenerateKey(Project project, string defaultKeyName = "PluginKey.snk")
         {
             try
             {
-                var defaultKeyName = "PluginKey.snk";
                 FileInfo projectDirectory = new FileInfo(project.FullName);
                 string keyFilePath = Path.Combine(projectDirectory.Directory.FullName, defaultKeyName);
 

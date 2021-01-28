@@ -3,10 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29926.136
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlbanianXrm Plugin Base", "AlbanianXrm Plugin Base\AlbanianXrm Plugin Base.csproj", "{A7398E32-291F-414C-B277-A8DD87D4760D}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlbanianXrm Workflow Base", "AlbanianXrm Workflow Base\AlbanianXrm Workflow Base.csproj", "{ED8FCC2A-D837-457C-A39F-F4C400A8D51A}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dynamics Plugin Template", "Dynamics Plugin Template\Dynamics Plugin Template.csproj", "{1CB2F47A-4F05-4109-9F3D-F334CE6BCCA4}"
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Shared Tools", "Shared Tools\Shared Tools.shproj", "{068ECFF9-DD77-4858-ABE7-6D757A660A6D}"
@@ -17,9 +13,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dynamics Plugin Template Wi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlbanianXrm Extensions.NuGetDependencies1", "AlbanianXrm Extensions.NuGetDependencies1\AlbanianXrm Extensions.NuGetDependencies1.csproj", "{F13408B1-A211-4E70-AFFD-BF30BB167097}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dynamics Workflow Template Wizard", "Dynamics Workflow Template Wizard\Dynamics Workflow Template Wizard.csproj", "{1382B484-BBF0-43B2-828C-6B8CFDE58789}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dynamics Workflow Template", "Dynamics Workflow Template\Dynamics Workflow Template.csproj", "{A4D10DF8-371B-4357-8316-4AFD3A27A70A}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		Shared Tools\Shared Tools.projitems*{068ecff9-dd77-4858-abe7-6d757a660a6d}*SharedItemsImports = 13
+		Shared Tools\Shared Tools.projitems*{1382b484-bbf0-43b2-828c-6b8cfde58789}*SharedItemsImports = 4
 		Shared Tools\Shared Tools.projitems*{73ebe1a6-f4b7-45cb-8168-8803c641afac}*SharedItemsImports = 4
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,14 +28,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{A7398E32-291F-414C-B277-A8DD87D4760D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A7398E32-291F-414C-B277-A8DD87D4760D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A7398E32-291F-414C-B277-A8DD87D4760D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A7398E32-291F-414C-B277-A8DD87D4760D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{ED8FCC2A-D837-457C-A39F-F4C400A8D51A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{ED8FCC2A-D837-457C-A39F-F4C400A8D51A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{ED8FCC2A-D837-457C-A39F-F4C400A8D51A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{ED8FCC2A-D837-457C-A39F-F4C400A8D51A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{1CB2F47A-4F05-4109-9F3D-F334CE6BCCA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{1CB2F47A-4F05-4109-9F3D-F334CE6BCCA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1CB2F47A-4F05-4109-9F3D-F334CE6BCCA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -51,6 +44,14 @@ Global
 		{F13408B1-A211-4E70-AFFD-BF30BB167097}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F13408B1-A211-4E70-AFFD-BF30BB167097}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F13408B1-A211-4E70-AFFD-BF30BB167097}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1382B484-BBF0-43B2-828C-6B8CFDE58789}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1382B484-BBF0-43B2-828C-6B8CFDE58789}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1382B484-BBF0-43B2-828C-6B8CFDE58789}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1382B484-BBF0-43B2-828C-6B8CFDE58789}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4D10DF8-371B-4357-8316-4AFD3A27A70A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4D10DF8-371B-4357-8316-4AFD3A27A70A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4D10DF8-371B-4357-8316-4AFD3A27A70A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4D10DF8-371B-4357-8316-4AFD3A27A70A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

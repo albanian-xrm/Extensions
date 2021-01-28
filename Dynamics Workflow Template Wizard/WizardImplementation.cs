@@ -8,7 +8,7 @@ using Microsoft.VisualStudio.ComponentModelHost;
 using System.Windows.Forms;
 using Microsoft.VisualStudio.Shell;
 
-namespace Dynamics_Plugin_Template
+namespace Dynamics_Workflow_Template
 {
     public class WizardImplementation : IWizard
     {
@@ -21,7 +21,7 @@ namespace Dynamics_Plugin_Template
         public void ProjectFinishedGenerating(Project project)
         {
             project.DTE.StatusBar.Text = "Generating Strong Name Key";
-            StrongNameGenerator.GenerateKey(project);
+            StrongNameGenerator.GenerateKey(project, "WorkflowKey.snk");
             project.DTE.StatusBar.Text = "Restoring NuGet Packages";
             var componentModel = (IComponentModel)Package.GetGlobalService(typeof(SComponentModel));
             IVsPackageInstaller2 packageInstaller = componentModel.GetService<IVsPackageInstaller2>();
@@ -37,10 +37,12 @@ namespace Dynamics_Plugin_Template
                     if (Version.Parse((item.Value + "").Substring(".NETFramework,Version=v".Length)) >= Version.Parse("4.6.2"))
                     {
                         packageVersions.Add("Microsoft.CrmSdk.CoreAssemblies", "9.0.2.29");
+                        packageVersions.Add("Microsoft.CrmSdk.Workflow", "9.0.2.29");
                     }
                     else
                     {
                         packageVersions.Add("Microsoft.CrmSdk.CoreAssemblies", "9.0.2.5"); 
+                        packageVersions.Add("Microsoft.CrmSdk.Workflow", "9.0.2.5"); 
                     }
                     break;
                 }
@@ -61,6 +63,7 @@ namespace Dynamics_Plugin_Template
                 {
                     case "Microsoft.Xrm.Sdk":
                     case "Microsoft.Crm.Sdk.Proxy":
+                    case "Microsoft.Crm.Sdk.Workflow":
                         reference.CopyLocal = false;
                         break;
                     default:
