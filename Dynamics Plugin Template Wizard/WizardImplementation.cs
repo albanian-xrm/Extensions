@@ -36,7 +36,7 @@ namespace Dynamics_Plugin_Template
                     ;
                     if (Version.Parse((item.Value + "").Substring(".NETFramework,Version=v".Length)) >= Version.Parse("4.6.2"))
                     {
-                        packageVersions.Add("Microsoft.CrmSdk.CoreAssemblies", "9.0.2.26");
+                        packageVersions.Add("Microsoft.CrmSdk.CoreAssemblies", "9.0.2.29");
                     }
                     else
                     {
